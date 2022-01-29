@@ -12,9 +12,9 @@ namespace NetworkChat
 
         public abstract Task Run();
 
-        protected void SendMessage()
+        protected async Task SendMessage()
         {
-            Task.Run(async () =>
+            while (true)
             {
                 var writer = new StreamWriter(_stream);
                 var data = Console.ReadLine();
@@ -24,8 +24,9 @@ namespace NetworkChat
                 if (data == "exit")
                 {
                     Shutdown();
+                    break;
                 }
-            });
+            }
         }
 
 

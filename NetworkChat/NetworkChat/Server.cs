@@ -24,8 +24,8 @@ namespace NetworkChat
             Console.WriteLine("Chat partner (Client) connected.");
 
 
-            SendMessage();
             GetMessage();
+            await SendMessage();
         }
     }
 }
