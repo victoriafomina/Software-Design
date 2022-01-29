@@ -10,7 +10,14 @@ namespace NetworkChat
         protected TcpClient _client = new();
         protected NetworkStream _stream;
 
-        public abstract Task Run();
+        public virtual async Task Run()
+        {
+            _stream = _client.GetStream();
+            Console.WriteLine("Chat partner is launched.");
+
+            GetMessage();
+            await SendMessage();
+        }
 
         protected async Task SendMessage()
         {

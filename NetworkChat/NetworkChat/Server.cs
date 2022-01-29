@@ -20,12 +20,8 @@ namespace NetworkChat
             Console.WriteLine("Server is launched. Waiting for client.");
 
             _client = await _listener.AcceptTcpClientAsync();
-            _stream = _client.GetStream();
-            Console.WriteLine("Chat partner (Client) connected.");
 
-
-            GetMessage();
-            await SendMessage();
+            await base.Run();
         }
     }
 }
