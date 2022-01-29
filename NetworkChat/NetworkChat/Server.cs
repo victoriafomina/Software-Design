@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NetworkChat
 {
-    public class Server : ICommunicator
+    public class Server : Communicator
     {
         private readonly TcpListener _listener;
 

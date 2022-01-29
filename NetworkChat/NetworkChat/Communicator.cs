@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NetworkChat
 {
-    public abstract class ICommunicator
+    public abstract class Communicator
     {
         protected TcpClient _client = new();
         protected NetworkStream _stream;
